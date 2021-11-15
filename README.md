@@ -28,17 +28,17 @@ get article by Id
 (get) localhost:8001/articulo/{id}
 
 new article
-(post) localhost:8001/articulo 
+(post) localhost:8001/articulo /n
 numero,descripcion,cantidad in request
 
 buy article
-(post) localhost:8001/articulo/compra
+(post) localhost:8001/articulo/compra /n
 articulo,cantidad in request
 
 sell article
-(post) localhost:8001/articulo/venta
+(post) localhost:8001/articulo/venta /n
 articulo,cantidad in request
 
 adjust stock from article
-(post) localhost:8001/articulo/ajustar
+(post) localhost:8001/articulo/ajustar /n
 articulo,cantidad in request
