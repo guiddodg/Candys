@@ -19,7 +19,14 @@ if tipo movimiento is empty u have to run the next query
 
 mysql> insert into tipo_movimiento values (1,'Compra'),(2,'Venta'),(3,'Ajuste')
 
-endpoints
+
+--urls
+
+http://localhost:8001/articulos all articles
+
+http://localhost:8001/articulos/1/movimientos movs of particular article
+
+--endpoints
 
 all articles: (get)
 localhost:8001/articulo 
