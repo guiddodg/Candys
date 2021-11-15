@@ -29,7 +29,7 @@ localhost:8001/articulo/{id}
 
 new article (post)
 localhost:8001/articulo 
-numero,descripcion,cantidad in request
+(numero,descripcion,cantidad in request)
 
 buy article (post)
 localhost:8001/articulo/compra 
