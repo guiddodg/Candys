@@ -21,24 +21,24 @@ mysql> insert into tipo_movimiento values (1,'Compra'),(2,'Venta'),(3,'Ajuste')
 
 endpoints
 
-all articles:
-(get) localhost:8001/articulo 
+all articles: (get)
+localhost:8001/articulo 
 
-get article by Id
-(get) localhost:8001/articulo/{id}
+get article by Id (get)
+localhost:8001/articulo/{id}
 
-new article
-(post) localhost:8001/articulo /n
+new article (post)
+localhost:8001/articulo 
 numero,descripcion,cantidad in request
 
-buy article
-(post) localhost:8001/articulo/compra /n
-articulo,cantidad in request
+buy article (post)
+localhost:8001/articulo/compra 
+(articulo,cantidad in request)
 
-sell article
-(post) localhost:8001/articulo/venta /n
-articulo,cantidad in request
+sell article (post)
+localhost:8001/articulo/venta 
+(articulo,cantidad in request)
 
-adjust stock from article
-(post) localhost:8001/articulo/ajustar /n
-articulo,cantidad in request
+adjust stock from article (post)
+localhost:8001/articulo/ajustar 
+(articulo,cantidad in request)
