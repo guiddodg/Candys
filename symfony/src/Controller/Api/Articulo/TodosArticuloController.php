@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TodosArticuloController extends AbstractController
 {
   /**
-   * @Route("/articulo",name="articulo", methods={"GET"})
+   * @Route("api/articulo",name="articulo", methods={"GET"})
    *
    */
   public function getAll(ArticuloRepository $repo)

@@ -15,7 +15,7 @@ use App\Service\Stock\ActualizarStockService;
 class MovimientosPorArticuloController extends AbstractController
 {
   /**
-   * @Route("/articulo/{id}/movimientos",name="articulo_busqueda_mov", methods={"GET"})
+   * @Route("api/articulo/{id}/movimientos",name="articulo_busqueda_mov", methods={"GET"})
    *
    */
   public function buscarArticuloPorId(int $id, MovimientoRepository $repodb)

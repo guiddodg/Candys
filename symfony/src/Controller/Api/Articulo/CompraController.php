@@ -14,7 +14,7 @@ class CompraController extends AbstractController
 {
 
     /**
-     * @Route("/articulo/compra",name="articulo_compra", methods={"POST"})
+     * @Route("api/articulo/compra",name="articulo_compra", methods={"POST"})
      *
      */
     public function compra(Request $request, StockRepository $repoStock, ActualizarStockService $actualizarStock): JsonResponse

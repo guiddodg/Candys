@@ -15,7 +15,7 @@ class VentaController extends AbstractController
 {
 
   /**
-   * @Route("/articulo/venta",name="articulo_venta", methods={"POST"})
+   * @Route("api/articulo/venta",name="articulo_venta", methods={"POST"})
    *
    */
   public function venta(Request $request, StockRepository $repoStock, ActualizarStockService $actualizarStock): JsonResponse

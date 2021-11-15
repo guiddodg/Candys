@@ -15,7 +15,7 @@ use App\Service\Stock\ActualizarStockService;
 class BuscarArticuloController extends AbstractController
 {
   /**
-   * @Route("/articulo/{id}",name="articulo_busqueda_id", methods={"GET"})
+   * @Route("api/articulo/{id}",name="articulo_busqueda_id", methods={"GET"})
    *
    */
   public function buscarArticuloPorId(int $id, ArticuloRepository $repodb)

@@ -15,7 +15,7 @@ class AjustarStockController extends AbstractController
 {
 
   /**
-   * @Route("/articulo/ajustar",name="articulo_ajuste", methods={"POST"})
+   * @Route("api/articulo/ajustar",name="articulo_ajuste", methods={"POST"})
    *
    */
   public function ajuste(Request $request, StockRepository $repoStock, ActualizarStockService $actualizarStock): JsonResponse

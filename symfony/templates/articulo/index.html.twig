@@ -1,0 +1,48 @@
+{% extends 'layout.html.twig' %}
+
+{% block main -%}
+    <div class="card">
+        <div class="card-header">
+            Articulos
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="tableArt table-striped">
+                        <thead>
+                        <tr>
+                            <th class="text-center" scope="col">id</th>
+                            <th class="text-center" scope="col">Codigo</th>
+                            <th class="text-center" scope="col">Descripcion</th>
+                            <th class="text-center" scope="col">Stock Actual</th>
+                            <th class="text-center" scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {%  for articulo in articulos %}
+                        <tr >
+                            <td class="text-center">{{ articulo.id }}</td>
+                            <td class="text-center">{{ articulo.numero }}</td>
+                            <td class="text-center">{{ articulo.descripcion }}</td>
+                            <td class="text-center">{{ articulo.stock.cantidad }}</td>
+                            <td class="text-center">
+                                <a class="dropdown-item" href="#{# { path('solicitud_show', {'id': entity.id}) }}#}"><i class="fas fa-search text-info"></i>&nbsp;&nbsp;Ver Movimientos</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" >
+        $(document).ready(function() {
+        $('.tableArt').DataTable();
+        } );
+    </script>
+{%  endblock %}

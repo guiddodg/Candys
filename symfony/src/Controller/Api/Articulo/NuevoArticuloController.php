@@ -14,7 +14,7 @@ use App\Form\Type\ArticuloType;
 class NuevoArticuloController extends AbstractController
 {
   /**
-   * @Route("/articulo",name="articulo_new", methods={"POST"})
+   * @Route("api/articulo",name="articulo_new", methods={"POST"})
    *
    */
   public function new(Request $request, NuevoArticuloService $nuevoArticulo): JsonResponse

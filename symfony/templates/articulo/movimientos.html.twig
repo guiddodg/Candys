@@ -1,0 +1,47 @@
+{% extends 'layout.html.twig' %}
+
+{% block main -%}
+    <div class="card">
+        <div class="card-header">
+            Movimientos del articulo
+{#            {{ movimientos.articulo.descripcion }}#}
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="tableMov table-striped">
+                        <thead>
+                        <tr>
+
+                            <th class="text-center" scope="col">Tipo Movimiento</th>
+                            <th class="text-center" scope="col">Cantidad</th>
+                            <th class="text-center" scope="col">Fecha</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {%  for movimiento in movimientos %}
+                            <tr >
+
+                                <td class="text-center">{{ movimiento.tipoMovimiento.descripcion }}</td>
+                                <td class="text-center">{{ movimiento.cantidad }}</td>
+                                <td class="text-center">{{ movimiento.fechaCrea|date('d-m-Y') }}</td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" >
+        $(document).ready(function() {
+            $('.tableMov').DataTable();
+        } );
+    </script>
+{%  endblock %}

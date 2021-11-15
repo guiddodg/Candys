@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Canyds">
+
+
+        <title>Canyds - Articulos</title>
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('assets/bootstrap/4.5/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/fontawesome/5.15/css/all.min.css') }}">
+            <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+
+
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('assets/jquery/3.5.1/jquery.min.js') }}"></script>
+            <script src="{{ asset('assets/bootstrap/4.5/js/bootstrap.min.js') }}"></script>
+            <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+
+        {% endblock %}
+        <!--[if lt IE 7]>It appears that you are using a <em>very</em> old version of MS Internet Explorer (MSIE). If you seriously want to continue to use MSIE, at least <a href="http://www.microsoft.com/windows/internet-explorer/">upgrade</a>.<![endif]-->
+    </head>
+
+    <body class="d-flex flex-column h-100">
+
+
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Sistema Stock Candys</span>
+    </nav>
+
+
+        <div class="container-sm container-fluid py-3">
+            {% block main %}
+
+            {% endblock %}
+        </div>
+
+        <footer id="footer" class="footer mt-auto py-3">
+            <span>Sistema Informático de Control Stock Canys</span>
+            <span class="copy"> versión 1</span>
+        </footer>
+
+    </body>
+</html>
