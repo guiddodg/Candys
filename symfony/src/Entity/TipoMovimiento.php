@@ -22,6 +22,11 @@ class TipoMovimiento
      */
     private $descripcion;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Movimiento",mappedBy="tipoMovimiento")
+     */
+    private $movimiento;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -37,5 +42,9 @@ class TipoMovimiento
         $this->descripcion = $descripcion;
 
         return $this;
+    }
+    public function getMovimiento()
+    {
+        return $this->movimiento;
     }
 }

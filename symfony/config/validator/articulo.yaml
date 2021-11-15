@@ -1,0 +1,10 @@
+App\Entity\Articulo:
+  properties:
+    numero:
+      - NotBlank: { message: No puede estar vacio. }
+    descripcion:
+      - NotBlank: { message: No puede estar vacio. }
+    ubicacion:
+      - NotBlank: { message: No puede estar vacio. }
+  constraints:
+    - App\Validator\ArticuloNumero: ~

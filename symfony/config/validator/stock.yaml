@@ -1,0 +1,8 @@
+App\Entity\Stock:
+  properties:
+    articulo:
+      - NotBlank: { message: Debe vincular un articulo. }
+    cantidad:
+      - GreaterThanOrEqual:
+          value: 0
+          message: El valor  no puede ser negativo.

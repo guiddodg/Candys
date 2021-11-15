@@ -18,7 +18,7 @@ class Movimiento
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Articulo", inversedBy="movimientos")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Articulo",inversedBy="movimiento")
      */
     private $articulo;
 
@@ -28,7 +28,7 @@ class Movimiento
     private $cantidad;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\TipoMovimiento")
+     * @ORM\ManyToOne(targetEntity="App\Entity\TipoMovimiento",inversedBy="movimiento")
      */
     private $tipoMovimiento;
 
@@ -36,6 +36,8 @@ class Movimiento
      * @ORM\Column(type="datetime")
      */
     private $fechaCrea;
+
+
 
     public function getId(): ?int
     {
@@ -88,5 +90,15 @@ class Movimiento
         $this->fechaCrea = $fechaCrea;
 
         return $this;
+    }
+    public function ToJson()
+    {
+        return [
+            'id' => $this->getId(),
+            'articulo' => $this->getArticulo()->getDescripcion(),
+            'cantidad' => $this->getCantidad(),
+            'tipoMovimiento' => $this->getTipoMovimiento()->getDescripcion(),
+            'fechaCrea' => $this->getFechaCrea()->format('Y-m-d H:i:s')
+        ];
     }
 }

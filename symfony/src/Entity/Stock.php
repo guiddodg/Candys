@@ -18,7 +18,7 @@ class Stock
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Articulo", inversedBy="stock")
+     * @ORM\OneToOne(targetEntity="App\Entity\Articulo", inversedBy="stock", cascade={"persist"})
      */
     private $articulo;
 
@@ -26,6 +26,12 @@ class Stock
      * @ORM\Column(type="integer")
      */
     private $cantidad;
+
+    public function __construct(Articulo $articulo)
+    {
+        $this->setArticulo($articulo);
+        $this->setCantidad(0);
+    }
 
     public function getId(): ?int
     {

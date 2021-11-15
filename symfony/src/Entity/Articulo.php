@@ -29,24 +29,25 @@ class Articulo
     private $descripcion;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Stock", inversedBy="articulo")
+     * @ORM\OneToOne(targetEntity="App\Entity\Stock", mappedBy="articulo")
      */
     private $stock;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $ubication;
+    private $ubicacion;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Movimiento", mappedBy="articulo")
      */
     private $movimientos;
 
-    public function __construct()
+    /*public function __construct()
     {
+
         $this->movimientos = new ArrayCollection();
-    }
+    }*/
 
     public function getId(): ?int
     {
@@ -82,21 +83,21 @@ class Articulo
         return $this->stock;
     }
 
-    public function setInventory(Stock $stock): self
+    public function setStock(Stock $stock): self
     {
         $this->stock = $stock;
 
         return $this;
     }
 
-    public function getUbication(): ?string
+    public function getUbicacion(): ?string
     {
-        return $this->ubication;
+        return $this->ubicacion;
     }
 
-    public function setUbication(string $ubication): self
+    public function setUbicacion(string $ubicacion): self
     {
-        $this->ubication = $ubication;
+        $this->ubicacion = $ubicacion;
 
         return $this;
     }
@@ -110,6 +111,15 @@ class Articulo
     {
         $this->movimientos = $movimientos;
     }
-
-
+    public function ToJson()
+    {
+        return [
+            'id' => $this->getId(),
+            'numero' => $this->getNumero(),
+            'descripcion' => $this->getDescripcion(),
+            'ubication' => $this->getUbicacion(),
+            'stock' => !$this->getStock() ? 0 : $this->getStock()->getCantidad()
+            //'movimientos' => $this->getMovimientos()
+        ];
+    }
 }
