@@ -26,7 +26,7 @@
                             <td class="text-center">{{ articulo.descripcion }}</td>
                             <td class="text-center">{{ articulo.stock.cantidad }}</td>
                             <td class="text-center">
-                                <a class="dropdown-item" href="#{# { path('solicitud_show', {'id': entity.id}) }}#}"><i class="fas fa-search text-info"></i>&nbsp;&nbsp;Ver Movimientos</a>
+                                <a class="dropdown-item" href="{{ path('articulo_movimientos_web', {'id': articulo.id}) }}"><i class="fas fa-search text-info"></i>&nbsp;&nbsp;Ver Movimientos</a>
                             </td>
                         </tr>
                         {% endfor %}
